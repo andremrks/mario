@@ -1,5 +1,7 @@
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
+const gameOver = document.querySelector(".gameOver");
+const playAgain = document.querySelector(".playAgain");
 
 const jump = () => {
   mario.classList.add("jump");
@@ -21,7 +23,17 @@ const loop = setInterval(() => {
 
     mario.style.animation = "none";
     mario.style.bottom = `${marioPosition}px`;
+    mario.src = "./images/lose.png";
+    mario.style.width = "85px";
+    mario.style.marginLeft = "45px";
+
+    gameOver.style.visibility = "visible";
+    playAgain.style.visibility = "visible";
   }
 }, 10);
+
+playAgain.addEventListener("click", () => {
+  window.location.reload();
+});
 
 document.addEventListener("keydown", jump);
