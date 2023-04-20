@@ -3,6 +3,7 @@ const pipe = document.querySelector(".pipe");
 const gameOver = document.querySelector(".gameOver");
 const playAgain = document.querySelector(".playAgain");
 
+//Function to allow keep jumping
 const jump = () => {
   mario.classList.add("jump");
 
@@ -11,6 +12,7 @@ const jump = () => {
   }, 500);
 };
 
+//Function to set game over
 const loop = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
   const marioPosition = +window
